@@ -1,0 +1,82 @@
+
+:host {
+  display: block;
+  width: 35rem;
+  padding: 1rem;
+}
+
+
+.mat-mdc-dialog-container {
+    --mdc-dialog-container-color: #white !important;
+    --mdc-dialog-with-divider-divider-color: rgba(255, 255, 255, 0.12) !important;
+    --mdc-dialog-subhead-color: rgba(15, 9, 9, 0.87) !important;
+    --mdc-dialog-supporting-text-color: rgba(20, 16, 16, 0.6) !important;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-empty {
+  text-align: center;
+
+  &__img {
+    width: 8rem;
+    height: auto;
+  }
+
+  &__msg {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+.cart-table {
+  width: 100%;
+
+  &__row {
+    border: 1px solid lightgrey;
+  }
+
+  &__img {
+    height: 3rem;
+    width: auto;
+  }
+
+  &__dish {
+    font-weight: 500;
+  }
+
+  &__quantity {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 20vw;
+  }
+
+  &__price {
+    font-weight: 500;
+    color: #673ab7;
+  }
+
+  &__btn {
+    text-align: center;
+  }
+
+  &__footer td {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+}
+
+.highlight {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #673ab7;
+}

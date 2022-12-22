@@ -1,0 +1,33 @@
+:host {
+    display: block;
+    width: 31rem;
+    padding: 2rem 2rem 1rem;
+  }
+  
+  .image-container {
+    text-align: center;
+  
+  }
+  
+  .msg {
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
+  }
+  
+  .highlight {
+    color: #673ab7;
+    font-weight: 500;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+
+  .cdk-overlay-pane {
+    max-width: 80vw;
+    position: static;
+    width: 100% !important;
+  }

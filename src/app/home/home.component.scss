@@ -1,0 +1,136 @@
+
+
+:host {
+  display: block;
+  padding: 1.5rem;
+}
+
+.categories {
+  &__caption {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 8.5rem);
+    grid-auto-rows: 9.5rem;
+    grid-gap: 2rem 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 2px solid #ffd740;
+  border-radius: 20px;
+  outline: none;
+  background-color: rgba(#ffd740, 0.1);
+  transition: background-color ease-out 0.15s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+
+  &__img {
+    width: 4rem;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  &:focus {
+    background-color: lighten(#ffd740, 15%);
+    border-color: darken(#ffd740, 20%);
+  }
+
+  &[aria-pressed="true"],
+  &:hover {
+    background-color: #ffd740;
+  }
+}
+
+.dishes {
+  &__caption {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 0.25fr));
+    grid-gap: 1.5rem 2rem;
+  }
+}
+
+.dish {
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  margin-top: 5rem;
+
+  &__figure {
+    margin: 0;
+    text-align: center;
+  }
+
+  &__img {
+    margin-bottom: 0.75rem;
+    margin-top: -5rem;
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 0.75rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__description {
+    margin: 0;
+    padding: 0.75rem 0;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    text-align: center;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    background-color: #ffd740;
+    color: white;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    outline: none;
+    transition: background-color ease-out 0.1s;
+    cursor: pointer;
+    &:focus {
+      background-color: lighten(#ffd740, 15%);
+      border-color: darken(#ffd740, 20%);
+    }
+
+    &:hover {
+      background-color: darken(#ffd740, 10%);
+    }
+  }
+}

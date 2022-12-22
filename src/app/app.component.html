@@ -1,0 +1,66 @@
+<div class="app-container" >
+  <div #pageTop class="page-top" aria-hidden="true" data-test="page-top"></div>
+  <!--  We have to put *ngLet directive below #pageTop to be able to query it in ngOnInit -->
+  <mat-toolbar
+    color="primary"
+    class="toolbar"
+  >
+    <a class="home-link d-sm-none" routerLink="/" data-test="home-link">
+      <h1 data-test="title">Coffee Shop</h1>
+    </a>
+
+    <div class="toolbar__main">
+      <nav class="nav">
+        <a
+          class="nav__link"
+          routerLink="/"
+          routerLinkActive="nav__link--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          mat-flat-button
+          data-test="app-btn"
+        >
+          Home
+        </a>
+
+        
+      </nav>
+
+     
+     
+      <div class="controls">
+        <ng-container *ngLet="{cartQuantity: totalCartQuantity$ | async} as o">
+
+        <button
+          class="cart"
+          [matBadge]="cartQuantity"
+          matBadgeColor="warn"
+          (click)="openCartDialog()"
+          aria-label="Open shopping cart"
+          data-test="cart"
+        >
+          <mat-icon>shopping_basket</mat-icon>
+        </button>
+
+        
+      </ng-container>
+
+       
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer id="app-footer" class="footer" data-test="footer">
+    <div>
+      <p class="footer__text" data-test="footer-made-by">
+        Made by siddu 
+      </p>
+      
+    </div>
+
+  </footer>
+
+</div>

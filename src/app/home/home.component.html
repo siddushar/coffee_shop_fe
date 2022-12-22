@@ -1,0 +1,48 @@
+
+<section class="categories" data-test="categories">
+    <h2 data-test="categories-caption">Categories</h2>
+    <div class="categories__items">
+      <button
+        *ngFor="let c of categories"
+        class="category"
+        [attr.aria-pressed]="selectedCategoryID === c.id"
+        (click)="selectedCategoryID = c.id"
+        data-test="category-card"
+      >
+        <img class="category__img" src="/assets/coffee_image.jpeg" alt="Image of {{ c.title }} category" />
+        {{ c.name }}
+      </button>
+    </div>
+  </section>
+  
+  <section *ngIf="selectedCategoryID" class="dishes" data-test="dishes">
+    <h2 data-test="dishes-caption">Menu Items</h2>
+    <div class="dishes__items">
+      <div class="dish" *ngFor="let d of filteredFood" data-test="dish-card">
+        <figure class="dish__figure">
+          <img
+            class="dish__img"
+            src="/assets/hot_coffee.jpeg"
+            alt="Image of {{ d.name }}"
+            loading="lazy"
+          />
+          <figcaption class="dish__title">{{ d.name }}</figcaption>
+        </figure>
+        <p class="dish__description">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+        <footer class="dish__footer">
+          <span class="dish__price">{{ d.price | currency }}</span>
+          <button
+            class="dish__add"
+            (click)="addToCart(d)"
+            aria-label="Add to Cart"
+            data-test="add-to-card-btn"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </footer>
+      </div>
+    </div>
+  </section>
+  
